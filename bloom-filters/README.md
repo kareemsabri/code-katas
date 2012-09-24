@@ -2,7 +2,7 @@ CODE KATA - BLOOM FILTER
 
 http://codekata.pragprog.com/2007/01/kata_five_bloom.html
 
-Problem:
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 There are many circumstances where we need to find out if something is a member of a set, and many algorithms for doing it. If the set is small, you can use bitmaps. When they get larger, hashes are a useful technique. But when the sets get big, we start bumping in to limitations. Holding 250,000 words in memory for a spell checker might be too big an overhead if your target environment is a PDA or cell phone. Keeping a list of web-pages visited might be extravagant when you get up to tens of millions of pages. Fortunately, there’s a technique that can help.
 
@@ -18,9 +18,10 @@ So, this kata is fairly straightforward. Implement a Bloom filter based spell ch
 
 Play with using different numbers of hashes, and with different bitmap sizes.
 
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 This is a solution implemented in C to the Bloom Filter Code Kata from above. It uses the Murmur Hash 2 - https://sites.google.com/site/murmurhash/ - as its hashing algorithm. You are invited to fork this, critique it, or suggest improvements. I don't claim this is the optimal solution by any means.
 
 DEPENDENCIES:
 
 Main function to test the solution assumes you are on a UNIX system and have a dictionary file located in /usr/share/dict/words. If you do not, alter the file specification to supply your own dictionary file.
-
