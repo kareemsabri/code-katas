@@ -104,19 +104,17 @@ int SortedStream::next() {
 }
 
 int main(int argc, char const *argv[]) {
-    Stream *streams = (Stream *)malloc(NUM_STREAMS*sizeof(streams));
+    Stream *streams = (Stream *)malloc(NUM_STREAMS*sizeof(Stream));
     for (int i = 0; i < NUM_STREAMS; i++) {
         streams[i] = Stream();
     }
     SortedStream sortedStream = SortedStream(streams, NUM_STREAMS);
-    int i= 0;
-    int last = 0;
-    int current;
+    int i = 0, previous = 0, current;
     //TODO: create better tests
     while(i++ < 10000) {
         current = sortedStream.next();
-        assert(current >= last);
-        last = current;
+        assert(current >= previous);
+        previous = current;
     }
     return 0;
 }
