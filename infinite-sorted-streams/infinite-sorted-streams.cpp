@@ -22,7 +22,6 @@ public:
     StreamMinHeap(int size);
     void add(Stream theStream);
     int removeMin();
-    void print();
 private:    
     void siftUp(int index);
     void siftDown(int index);
