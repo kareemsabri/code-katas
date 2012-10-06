@@ -32,4 +32,4 @@ Solution is case-insensitive. KLAXON, KlAxoN, and klaxon are all considered to b
 
 DEPENDENCIES:
 
-Main function to test the solution assumes you are on a UNIX system and have a dictionary file located in /usr/share/dict/words. If you do not, alter the file specification to supply your own dictionary file.
+Main function to test the solution assumes you are on a UNIX system and have a dictionary file located in /usr/share/dict/words. If you do not, alter the file specification to supply your own dictionary file. Dictionary file should contain only [A-Za-z].
