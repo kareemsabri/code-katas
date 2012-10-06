@@ -11,15 +11,19 @@ typedef struct node {
 
 void insert(unsigned long long int key, char *word, node *array, int size) {
 	int index = key % size;
+	//check for collision
 	while(array[index].key != 0 && array[index].key != key) {
+		//probe linearly
 		index = (index + 1) % size;
 	}
+	//first entry
 	if (array[index].key == 0) {
 		array[index].key = key;	
 		array[index].word = word;
 		array[index].next = NULL;
 		return;		
 	}
+	//chaining with anagram
 	node *tmp = &array[index];
 	while(tmp->next != NULL) {
 		tmp = tmp->next;
