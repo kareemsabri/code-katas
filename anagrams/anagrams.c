@@ -78,7 +78,6 @@ int main(int argc, char const *argv[]) {
 		fgets(*(wordArray + i), 100, file);
 		unsigned long long int product = 1;
 		char *j = *(wordArray + i);
-		int k;
 		do {
 			product *= primes['z' - tolower(*j)];
 		} while(*++j != '\n');
