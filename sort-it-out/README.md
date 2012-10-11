@@ -39,11 +39,12 @@ Our resident conspiracy expert, Dr. X, is looking for hidden messages in the col
 
   aaaaabbbbcccdeeeeeghhhiiiiklllllllmnnnnooopprsssstttuuvwyyyy
 
-
 The program ignores punctuation, and maps upper case to lower case.
 
-Are there any ways to perform this sort cheaply, and without using built-in libraries?dictionary.  
+Are there any ways to perform this sort cheaply, and without using built-in libraries?
 
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sorting Balls is in lottery.c. This is a set problem. Since we know the entire universe of possible integers, [0,N), and we know repitition is not allowed, this is an ideal scenario for a bitmap. For N balls I allocate N bits (plus possibly some extra, smallest addressable unit is a byte). Bit with index i set to 1 means i has been drawn. This solution has constant-time insertion, and O(N) printing time.
+
+Sorting Characters is in sorting-characters.c. This is called Sorting Characters, but it can be accomplished just as easily by counting the occurence of characters. Again, because we know the entire universe of characters ['a','z'], or [97,122] in ASCII, we can just map these codes to an array of length 26 (97->0, 98->1, ... , 122->25) and store the number of occurences of each character in its corresponding index. Sorting a string of length n is then O(n) - because insertion is O(1) - and printing is O(n). This is basically the world's simplest hash table, with hash function key - 97.
